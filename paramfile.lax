@@ -3,9 +3,6 @@
 #C{
 output(0): 100;
 output(1): 100;
-output(2): 100;
 change(0): 100;
 change(1): 100;
-change(2): 100;
-change(3): 100;
 }
