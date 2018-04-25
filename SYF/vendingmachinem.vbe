@@ -1,0 +1,166 @@
+-- VHDL data flow description generated from `vendingmachinem`
+--		date : Wed Apr 25 14:07:27 2018
+
+
+-- Entity Declaration
+
+ENTITY vendingmachinem IS
+  PORT (
+  vdd : in BIT;	-- vdd
+  vss : in BIT;	-- vss
+  clk : in BIT;	-- clk
+  input : in bit_vector(2 DOWNTO 0) ;	-- input
+  rst : in BIT;	-- rst
+  output : out bit_vector(1 DOWNTO 0) ;	-- output
+  change : out bit_vector(1 DOWNTO 0) 	-- change
+  );
+END vendingmachinem;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE VBE OF vendingmachinem IS
+  SIGNAL statmachine_current_s : REG_VECTOR(3 DOWNTO 0) REGISTER;	-- statmachine_current_s
+  SIGNAL statmachine_current_s_s8 : BIT;		-- statmachine_current_s_s8
+  SIGNAL statmachine_next_s_s8 : BIT;		-- statmachine_next_s_s8
+  SIGNAL statmachine_current_s_s7 : BIT;		-- statmachine_current_s_s7
+  SIGNAL statmachine_next_s_s7 : BIT;		-- statmachine_next_s_s7
+  SIGNAL statmachine_current_s_s6 : BIT;		-- statmachine_current_s_s6
+  SIGNAL statmachine_next_s_s6 : BIT;		-- statmachine_next_s_s6
+  SIGNAL statmachine_current_s_s5 : BIT;		-- statmachine_current_s_s5
+  SIGNAL statmachine_next_s_s5 : BIT;		-- statmachine_next_s_s5
+  SIGNAL statmachine_current_s_s4 : BIT;		-- statmachine_current_s_s4
+  SIGNAL statmachine_next_s_s4 : BIT;		-- statmachine_next_s_s4
+  SIGNAL statmachine_current_s_s3 : BIT;		-- statmachine_current_s_s3
+  SIGNAL statmachine_next_s_s3 : BIT;		-- statmachine_next_s_s3
+  SIGNAL statmachine_current_s_s2 : BIT;		-- statmachine_current_s_s2
+  SIGNAL statmachine_next_s_s2 : BIT;		-- statmachine_next_s_s2
+  SIGNAL statmachine_current_s_s1 : BIT;		-- statmachine_current_s_s1
+  SIGNAL statmachine_next_s_s1 : BIT;		-- statmachine_next_s_s1
+  SIGNAL statmachine_current_s_s0 : BIT;		-- statmachine_current_s_s0
+  SIGNAL statmachine_next_s_s0 : BIT;		-- statmachine_next_s_s0
+  SIGNAL statmachine_next_s : BIT_VECTOR(3 DOWNTO 0);	-- statmachine_next_s
+
+BEGIN
+  statmachine_next_s(0) <= (statmachine_next_s_s1 OR statmachine_next_s_s3 
+OR statmachine_next_s_s4 OR statmachine_next_s_s5);
+  statmachine_next_s(1) <= (statmachine_next_s_s2 OR statmachine_next_s_s4 
+OR statmachine_next_s_s6);
+  statmachine_next_s(2) <= (statmachine_next_s_s2 OR statmachine_next_s_s3 
+OR statmachine_next_s_s4 OR statmachine_next_s_s8);
+  statmachine_next_s(3) <= (statmachine_next_s_s1 OR statmachine_next_s_s2 
+OR statmachine_next_s_s3 OR statmachine_next_s_s4 
+OR statmachine_next_s_s7);
+  statmachine_next_s_s0 <= ((statmachine_current_s_s0 AND ((input(0) AND 
+input(1)) OR input(2))) OR (statmachine_current_s_s5 AND 
+((input(0) AND input(1) AND NOT(input(2))) OR (NOT
+(input(0)) AND NOT(input(1)) AND input(2)))) OR (
+statmachine_current_s_s6 AND ((input(0) AND input(1) AND NOT(input(2))) 
+OR (NOT(input(0)) AND NOT(input(1)) AND input(2))))
+ OR (statmachine_current_s_s7 AND ((input(0) AND 
+input(1) AND NOT(input(2))) OR (NOT(input(0)) AND NOT(
+input(1)) AND input(2)))) OR (statmachine_current_s_s8 
+AND ((input(0) AND input(1) AND NOT(input(2))) OR (
+NOT(input(0)) AND NOT(input(1)) AND input(2)))));
+  statmachine_current_s_s0 <= (NOT(statmachine_current_s(3)) AND NOT(
+statmachine_current_s(2)) AND NOT(statmachine_current_s(1)) AND NOT(
+statmachine_current_s(0)));
+  statmachine_next_s_s1 <= ((statmachine_current_s_s0 AND NOT(input(0)) AND 
+NOT(input(1)) AND NOT(input(2))) OR (
+statmachine_current_s_s1 AND ((input(0) AND input(1)) OR input(2))));
+  statmachine_current_s_s1 <= (statmachine_current_s(3) AND NOT(
+statmachine_current_s(2)) AND statmachine_current_s(0));
+  statmachine_next_s_s2 <= ((statmachine_current_s_s0 AND input(0) AND NOT(
+input(1)) AND NOT(input(2))) OR (statmachine_current_s_s1
+ AND NOT(input(0)) AND NOT(input(1)) AND NOT(
+input(2))) OR (statmachine_current_s_s2 AND ((input(0) 
+AND input(1)) OR input(2))));
+  statmachine_current_s_s2 <= (statmachine_current_s(3) AND 
+statmachine_current_s(2) AND NOT(statmachine_current_s(0)));
+  statmachine_next_s_s3 <= ((statmachine_current_s_s1 AND input(0) AND NOT(
+input(1)) AND NOT(input(2))) OR (statmachine_current_s_s2
+ AND NOT(input(0)) AND NOT(input(1)) AND NOT(
+input(2))) OR (statmachine_current_s_s3 AND ((input(0) 
+AND input(1)) OR input(2))));
+  statmachine_current_s_s3 <= (statmachine_current_s(3) AND 
+statmachine_current_s(2) AND NOT(statmachine_current_s(1)));
+  statmachine_next_s_s4 <= ((statmachine_current_s_s0 AND NOT(input(0)) AND 
+input(1) AND NOT(input(2))) OR (statmachine_current_s_s2 
+AND input(0) AND NOT(input(1)) AND NOT(input(2))) OR
+ (statmachine_current_s_s3 AND NOT(input(0)) AND 
+NOT(input(1)) AND NOT(input(2))) OR (
+statmachine_current_s_s4 AND ((input(0) AND input(1)) OR input(2))));
+  statmachine_current_s_s4 <= (statmachine_current_s(1) AND 
+statmachine_current_s(0));
+  statmachine_next_s_s5 <= ((statmachine_current_s_s1 AND NOT(input(0)) AND 
+input(1) AND NOT(input(2))) OR (statmachine_current_s_s3 
+AND input(0) AND NOT(input(1)) AND NOT(input(2))) OR
+ (statmachine_current_s_s4 AND NOT(input(0)) AND 
+NOT(input(1)) AND NOT(input(2))) OR (
+statmachine_current_s_s5 AND (((NOT(input(0)) OR NOT(input(1))) AND NOT(
+input(2))) OR ((input(0) OR input(1)) AND input(2)))));
+  statmachine_current_s_s5 <= (NOT(statmachine_current_s(3)) AND NOT(
+statmachine_current_s(2)) AND statmachine_current_s(0));
+  statmachine_next_s_s6 <= ((statmachine_current_s_s2 AND NOT(input(0)) AND 
+input(1) AND NOT(input(2))) OR (statmachine_current_s_s4 
+AND input(0) AND NOT(input(1)) AND NOT(input(2))) OR
+ (statmachine_current_s_s6 AND (((NOT(input(0)) OR
+ NOT(input(1))) AND NOT(input(2))) OR ((input(0) 
+OR input(1)) AND input(2)))));
+  statmachine_current_s_s6 <= (NOT(statmachine_current_s(3)) AND NOT(
+statmachine_current_s(2)) AND statmachine_current_s(1));
+  statmachine_next_s_s7 <= ((statmachine_current_s_s3 AND NOT(input(0)) AND 
+input(1) AND NOT(input(2))) OR (statmachine_current_s_s7 
+AND (((NOT(input(0)) OR NOT(input(1))) AND NOT(
+input(2))) OR ((input(0) OR input(1)) AND input(2)))));
+  statmachine_current_s_s7 <= (statmachine_current_s(3) AND NOT(
+statmachine_current_s(2)) AND NOT(statmachine_current_s(0)));
+  statmachine_next_s_s8 <= ((statmachine_current_s_s4 AND NOT(input(0)) AND 
+input(1) AND NOT(input(2))) OR (statmachine_current_s_s8 
+AND (((NOT(input(0)) OR NOT(input(1))) AND NOT(
+input(2))) OR ((input(0) OR input(1)) AND input(2)))));
+  statmachine_current_s_s8 <= (NOT(statmachine_current_s(3)) AND 
+statmachine_current_s(2) AND NOT(statmachine_current_s(1)));
+  label0 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    statmachine_current_s(0) <= GUARDED (statmachine_next_s(0) AND NOT(rst));
+  END BLOCK label0;
+  label1 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    statmachine_current_s(1) <= GUARDED (statmachine_next_s(1) AND NOT(rst));
+  END BLOCK label1;
+  label2 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    statmachine_current_s(2) <= GUARDED (statmachine_next_s(2) AND NOT(rst));
+  END BLOCK label2;
+  label3 : BLOCK ((NOT((clk'STABLE)) AND clk) = '1')
+  BEGIN
+    statmachine_current_s(3) <= GUARDED (statmachine_next_s(3) AND NOT(rst));
+  END BLOCK label3;
+
+change(0) <= ((statmachine_current_s_s2 AND NOT(rst) AND NOT(
+input(0)) AND input(1) AND NOT(input(2))) OR (
+statmachine_current_s_s4 AND NOT(rst) AND (input(1) XOR input(0)) AND NOT
+(input(2))));
+
+change(1) <= ((statmachine_current_s_s3 AND NOT(rst) AND NOT(
+input(0)) AND input(1) AND NOT(input(2))) OR (
+statmachine_current_s_s4 AND NOT(rst) AND NOT(input(0)) AND input(1) AND 
+NOT(input(2))));
+
+output(0) <= ((statmachine_current_s_s5 AND NOT(rst) AND 
+input(0) AND input(1) AND NOT(input(2))) OR (
+statmachine_current_s_s6 AND NOT(rst) AND input(0) AND input(1) AND NOT(
+input(2))) OR (statmachine_current_s_s7 AND NOT(rst) AND 
+input(0) AND input(1) AND NOT(input(2))) OR (
+statmachine_current_s_s8 AND NOT(rst) AND input(0) AND input(1) AND NOT(
+input(2))));
+
+output(1) <= ((statmachine_current_s_s5 AND NOT(rst) AND NOT(
+input(0)) AND NOT(input(1)) AND input(2)) OR (
+statmachine_current_s_s6 AND NOT(rst) AND NOT(input(0)) AND NOT(input(1))
+ AND input(2)) OR (statmachine_current_s_s7 AND 
+NOT(rst) AND NOT(input(0)) AND NOT(input(1)) AND 
+input(2)) OR (statmachine_current_s_s8 AND NOT(rst) AND 
+NOT(input(0)) AND NOT(input(1)) AND input(2)));
+END;
