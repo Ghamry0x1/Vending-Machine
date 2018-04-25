@@ -1,0 +1,132 @@
+-- VHDL data flow description generated from `vendingmachineo_o`
+--		date : Wed Apr 25 14:07:28 2018
+
+
+-- Entity Declaration
+
+ENTITY vendingmachineo_o IS
+  PORT (
+  vdd : in BIT;	-- vdd
+  vss : in BIT;	-- vss
+  clk : in BIT;	-- clk
+  input : in bit_vector(2 DOWNTO 0) ;	-- input
+  rst : in BIT;	-- rst
+  output : out bit_vector(1 DOWNTO 0) ;	-- output
+  change : out bit_vector(1 DOWNTO 0) 	-- change
+  );
+END vendingmachineo_o;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF vendingmachineo_o IS
+  SIGNAL statmachine_current_s : REG_VECTOR(8 DOWNTO 0) REGISTER;	-- statmachine_current_s
+  SIGNAL aux0 : BIT;		-- aux0
+  SIGNAL aux1 : BIT;		-- aux1
+  SIGNAL aux4 : BIT;		-- aux4
+  SIGNAL aux5 : BIT;		-- aux5
+  SIGNAL aux6 : BIT;		-- aux6
+  SIGNAL aux7 : BIT;		-- aux7
+  SIGNAL aux8 : BIT;		-- aux8
+  SIGNAL aux9 : BIT;		-- aux9
+  SIGNAL aux10 : BIT;		-- aux10
+  SIGNAL aux11 : BIT;		-- aux11
+  SIGNAL aux12 : BIT;		-- aux12
+  SIGNAL aux13 : BIT;		-- aux13
+  SIGNAL aux14 : BIT;		-- aux14
+  SIGNAL aux15 : BIT;		-- aux15
+  SIGNAL aux16 : BIT;		-- aux16
+
+BEGIN
+  aux16 <= NOT((aux1 AND aux13) OR (NOT(aux5) AND aux14));
+  aux15 <= (input(1) AND aux14);
+  aux14 <= (NOT(rst) AND NOT(input(0)));
+  aux13 <= (NOT(rst) AND input(0));
+  aux12 <= (input(2) OR statmachine_current_s(8));
+  aux11 <= (NOT(input(2)) OR statmachine_current_s(6));
+  aux10 <= (input(2) OR statmachine_current_s(7));
+  aux9 <= (NOT(input(2)) OR statmachine_current_s(5));
+  aux8 <= (input(2) OR statmachine_current_s(6));
+  aux7 <= (NOT(input(2)) OR statmachine_current_s(4));
+  aux6 <= (NOT(input(2)) AND statmachine_current_s(5));
+  aux5 <= (input(2) AND NOT(input(1)));
+  aux4 <= (((statmachine_current_s(2) OR 
+statmachine_current_s(0)) OR statmachine_current_s(1)) OR 
+statmachine_current_s(3));
+  aux1 <= NOT(NOT(input(2)) AND input(1));
+  aux0 <= (NOT(input(2)) AND statmachine_current_s(4));
+  label0 : BLOCK ((clk AND NOT((clk'STABLE))) = '1')
+  BEGIN
+    statmachine_current_s (0) <= GUARDED ((aux1 AND statmachine_current_s(0) AND aux13) OR
+ (((NOT(input(2)) AND statmachine_current_s(0)) OR
+ input(1)) AND (aux0 OR statmachine_current_s(0)) 
+AND aux14));
+  END BLOCK label0;
+  label1 : BLOCK ((clk AND NOT((clk'STABLE))) = '1')
+  BEGIN
+    statmachine_current_s (1) <= GUARDED ((aux1 AND statmachine_current_s(1) AND aux13) OR
+ (((NOT(input(2)) AND statmachine_current_s(1)) OR
+ input(1)) AND (aux6 OR statmachine_current_s(1)) 
+AND aux14));
+  END BLOCK label1;
+  label2 : BLOCK ((clk AND NOT((clk'STABLE))) = '1')
+  BEGIN
+    statmachine_current_s (2) <= GUARDED ((aux1 AND (aux0 OR statmachine_current_s(2)) AND
+ aux13) OR (((NOT(input(2)) AND 
+statmachine_current_s(2)) OR input(1)) AND ((NOT(input(2)) AND 
+statmachine_current_s(6)) OR statmachine_current_s(2)) AND aux14));
+  END BLOCK label2;
+  label3 : BLOCK ((clk AND NOT((clk'STABLE))) = '1')
+  BEGIN
+    statmachine_current_s (3) <= GUARDED (((aux6 AND input(0)) OR (((NOT(input(2)) AND 
+statmachine_current_s(7) AND input(1)) OR (statmachine_current_s(4) AND 
+NOT(input(1)))) AND NOT(input(0))) OR 
+statmachine_current_s(3)) AND NOT(aux16));
+  END BLOCK label3;
+  label4 : BLOCK ((clk AND NOT((clk'STABLE))) = '1')
+  BEGIN
+    statmachine_current_s (4) <= GUARDED ((((statmachine_current_s(4) AND input(1)) OR (
+aux7 AND aux8 AND NOT(input(1)))) AND aux13) OR (((
+input(2) AND statmachine_current_s(4)) OR (aux7 AND 
+statmachine_current_s(8) AND input(1)) OR (aux6 AND NOT(input(1)))) AND 
+aux14));
+  END BLOCK label4;
+  label5 : BLOCK ((clk AND NOT((clk'STABLE))) = '1')
+  BEGIN
+    statmachine_current_s (5) <= GUARDED ((((statmachine_current_s(5) AND input(1)) OR (
+aux9 AND aux10 AND NOT(input(1)))) AND aux13) OR (
+aux1 AND aux9 AND aux8 AND aux14));
+  END BLOCK label5;
+  label6 : BLOCK ((clk AND NOT((clk'STABLE))) = '1')
+  BEGIN
+    statmachine_current_s (6) <= GUARDED ((((statmachine_current_s(6) AND input(1)) OR (
+aux11 AND aux12 AND NOT(input(1)))) AND aux13) OR (
+aux1 AND aux11 AND aux10 AND aux14));
+  END BLOCK label6;
+  label7 : BLOCK ((clk AND NOT((clk'STABLE))) = '1')
+  BEGIN
+    statmachine_current_s (7) <= GUARDED (((input(2) OR input(1)) AND 
+statmachine_current_s(7) AND aux13) OR (aux1 AND (NOT(input(2)) OR 
+statmachine_current_s(7)) AND aux12 AND aux14));
+  END BLOCK label7;
+  label8 : BLOCK ((clk AND NOT((clk'STABLE))) = '1')
+  BEGIN
+    statmachine_current_s (8) <= GUARDED ((statmachine_current_s(8) OR 
+statmachine_current_s(2) OR statmachine_current_s(0) OR 
+statmachine_current_s(1) OR rst OR (NOT(input(1)) AND input(0)) OR (
+input(1) AND NOT(input(0))) OR statmachine_current_s(3)) 
+AND ((input(2) AND statmachine_current_s(8)) OR 
+aux16));
+  END BLOCK label8;
+
+change (0) <= ((aux0 AND NOT(input(1)) AND aux13) OR (NOT(
+input(2)) AND (statmachine_current_s(6) OR 
+statmachine_current_s(4)) AND aux15));
+
+change (1) <= (NOT(input(2)) AND (statmachine_current_s(4) OR 
+statmachine_current_s(5)) AND aux15);
+
+output (0) <= (aux4 AND NOT(aux1) AND aux13);
+
+output (1) <= (aux4 AND aux5 AND aux14);
+END;
