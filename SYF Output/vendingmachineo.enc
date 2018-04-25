@@ -1,0 +1,11 @@
+# Encoding figure "statmachine"
+-statmachine o 9
+s8	0	1
+s7	1	2
+s6	2	4
+s5	3	8
+s4	4	10
+s3	5	20
+s2	6	40
+s1	7	80
+s0	8	100
