@@ -1,0 +1,89 @@
+
+                   @@@@@@                          @@@    @@@
+                     @@                             @@     @ 
+                     @@                             @@@    @ 
+                     @@           @@@       @@@     @ @@   @ 
+                     @@         @@   @@   @@   @@   @ @@   @ 
+                     @@        @@     @@ @@     @@  @  @@  @ 
+                     @@        @@     @@ @@     @@  @   @@ @ 
+                     @@        @@     @@ @@     @@  @   @@ @ 
+                     @@      @ @@     @@ @@     @@  @    @@@ 
+                     @@     @   @@   @@   @@   @@   @     @@ 
+                   @@@@@@@@@@     @@@       @@@    @@@    @@ 
+
+                           Local optimization on Nets
+
+                 Alliance CAD System 5.0, loon 5.0 [2003/12/07]
+                 Copyright (c) 2000-2018,        ASIM/LIP6/UPMC
+                 Author(s):                     François Donnet
+                 E-mail        :    alliance-users@asim.lip6.fr
+
+	MBK_IN_LO	: vst
+	MBK_OUT_LO	: vst
+	MBK_TARGET_LIB	: /usr/share/alliance/cells/sxlib
+
+Reading parameter file 'paramfile.lax'...
+50% area - 50% delay optimization
+Reading file 'vendingmachineo_o.vst'...
+Controlling file 'paramfile.lax'...
+Reading lib '/usr/share/alliance/cells/sxlib'...
+Capacitances on file 'vendingmachineo_o.vst'...
+Delays on file 'vendingmachineo_o.vst'...2455 ps
+Area on file 'vendingmachineo_o.vst'...150000 lamda² (with over-cell routing)
+Details...
+	inv_x2: 18 (9%)
+	a2_x2: 14 (11%)
+	oa22_x2: 10 (10%)
+	sff1_x4: 9 (27%)
+	no2_x1: 8 (5%)
+	no3_x1: 6 (5%)
+	ao22_x2: 5 (5%)
+	o2_x2: 5 (4%)
+	na2_x1: 5 (3%)
+	nao22_x1: 3 (3%)
+	a3_x2: 3 (3%)
+	na3_x1: 2 (1%)
+	no4_x1: 2 (2%)
+	o3_x2: 1 (1%)
+	oa2a22_x2: 1 (1%)
+	oa2ao222_x2: 1 (1%)
+	oa2a2a23_x2: 1 (2%)
+	noa22_x1: 1 (1%)
+	ao2o22_x2: 1 (1%)
+	a4_x2: 1 (1%)
+	Total: 97
+Worst RC on file 'vendingmachineo_o.vst'...416 ps
+Inserting buffers on critical path for file 'vendingmachineo_l.vst'...2 buffers inserted -> 2412 ps
+Improving RC on critical path for file 'vendingmachineo_l.vst'...2412 ps
+Improving all RC for file 'vendingmachineo_l.vst'...
+Worst RC on file 'vendingmachineo_l.vst'...416 ps
+Area on file 'vendingmachineo_l.vst'...152250 lamda² (with over-cell routing)
+Details...
+	inv_x2: 17 (8%)
+	a2_x2: 14 (11%)
+	oa22_x2: 10 (9%)
+	sff1_x4: 9 (26%)
+	no2_x1: 8 (5%)
+	no3_x1: 6 (4%)
+	ao22_x2: 5 (4%)
+	o2_x2: 5 (4%)
+	na2_x1: 5 (3%)
+	nao22_x1: 3 (2%)
+	a3_x2: 3 (2%)
+	buf_x2: 2 (1%)
+	na3_x1: 2 (1%)
+	no4_x1: 2 (1%)
+	o3_x2: 1 (0%)
+	oa2a22_x2: 1 (1%)
+	oa2ao222_x2: 1 (1%)
+	oa2a2a23_x2: 1 (1%)
+	noa22_x1: 1 (0%)
+	ao2o22_x2: 1 (1%)
+	inv_x4: 1 (0%)
+	a4_x2: 1 (1%)
+	Total: 99
+Critical path (no warranty)...2412 ps from 'statmachine_current_s 4' to 'statmachine_current_s_4_ins'
+Saving file 'vendingmachineo_l.vst'...
+Saving critical path in xsch color file 'vendingmachineo_l.xsc'...
+End of loon...
+
