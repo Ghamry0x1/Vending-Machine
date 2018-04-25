@@ -1,0 +1,251 @@
+-- VHDL data flow description generated from `vendingmachinej_labs`
+--		date : Tue Apr 24 18:57:58 2018
+
+
+-- Entity Declaration
+
+ENTITY vendingmachinej_labs IS
+  PORT (
+  change : out bit_vector(1 DOWNTO 0) ;	-- change
+  output : out bit_vector(1 DOWNTO 0) ;	-- output
+  rst : in BIT;	-- rst
+  input : in bit_vector(2 DOWNTO 0) ;	-- input
+  clk : in BIT;	-- clk
+  vss : in BIT;	-- vss
+  vdd : in BIT	-- vdd
+  );
+END vendingmachinej_labs;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF vendingmachinej_labs IS
+  SIGNAL statmachine_current_s : REG_VECTOR(3 DOWNTO 0) REGISTER;	-- statmachine_current_s
+  SIGNAL not_aux6 : BIT;		-- not_aux6
+  SIGNAL not_aux5 : BIT;		-- not_aux5
+  SIGNAL not_aux8 : BIT;		-- not_aux8
+  SIGNAL not_aux14 : BIT;		-- not_aux14
+  SIGNAL not_aux16 : BIT;		-- not_aux16
+  SIGNAL not_aux17 : BIT;		-- not_aux17
+  SIGNAL no2_x1_sig : BIT;		-- no2_x1_sig
+  SIGNAL not_aux13 : BIT;		-- not_aux13
+  SIGNAL not_aux10 : BIT;		-- not_aux10
+  SIGNAL not_aux7 : BIT;		-- not_aux7
+  SIGNAL not_aux2 : BIT;		-- not_aux2
+  SIGNAL not_aux0 : BIT;		-- not_aux0
+  SIGNAL not_statmachine_current_s : BIT_VECTOR(3 DOWNTO 0);	-- not_statmachine_current_s
+  SIGNAL not_aux19 : BIT;		-- not_aux19
+  SIGNAL not_aux4 : BIT;		-- not_aux4
+  SIGNAL not_aux20 : BIT;		-- not_aux20
+  SIGNAL not_aux18 : BIT;		-- not_aux18
+  SIGNAL not_aux11 : BIT;		-- not_aux11
+  SIGNAL not_input : BIT_VECTOR(2 DOWNTO 0);	-- not_input
+  SIGNAL aux19 : BIT;		-- aux19
+  SIGNAL aux18 : BIT;		-- aux18
+  SIGNAL aux12 : BIT;		-- aux12
+  SIGNAL aux11 : BIT;		-- aux11
+  SIGNAL aux9 : BIT;		-- aux9
+  SIGNAL aux4 : BIT;		-- aux4
+  SIGNAL aux3 : BIT;		-- aux3
+  SIGNAL aux1 : BIT;		-- aux1
+  SIGNAL a2_x2_2_sig : BIT;		-- a2_x2_2_sig
+  SIGNAL a2_x2_sig : BIT;		-- a2_x2_sig
+  SIGNAL on12_x1_sig : BIT;		-- on12_x1_sig
+  SIGNAL nao2o22_x1_sig : BIT;		-- nao2o22_x1_sig
+  SIGNAL o2_x2_sig : BIT;		-- o2_x2_sig
+  SIGNAL nao2o22_x1_2_sig : BIT;		-- nao2o22_x1_2_sig
+  SIGNAL no2_x1_2_sig : BIT;		-- no2_x1_2_sig
+  SIGNAL na2_x1_sig : BIT;		-- na2_x1_sig
+  SIGNAL a3_x2_sig : BIT;		-- a3_x2_sig
+  SIGNAL an12_x1_sig : BIT;		-- an12_x1_sig
+  SIGNAL o2_x2_2_sig : BIT;		-- o2_x2_2_sig
+  SIGNAL oa2ao222_x2_2_sig : BIT;		-- oa2ao222_x2_2_sig
+  SIGNAL oa2ao222_x2_sig : BIT;		-- oa2ao222_x2_sig
+  SIGNAL a2_x2_3_sig : BIT;		-- a2_x2_3_sig
+  SIGNAL nxr2_x1_sig : BIT;		-- nxr2_x1_sig
+  SIGNAL a2_x2_4_sig : BIT;		-- a2_x2_4_sig
+  SIGNAL no2_x1_3_sig : BIT;		-- no2_x1_3_sig
+  SIGNAL oa2ao222_x2_3_sig : BIT;		-- oa2ao222_x2_3_sig
+  SIGNAL a2_x2_5_sig : BIT;		-- a2_x2_5_sig
+  SIGNAL inv_x2_sig : BIT;		-- inv_x2_sig
+  SIGNAL a2_x2_6_sig : BIT;		-- a2_x2_6_sig
+  SIGNAL inv_x2_2_sig : BIT;		-- inv_x2_2_sig
+  SIGNAL oa2a2a23_x2_sig : BIT;		-- oa2a2a23_x2_sig
+  SIGNAL oa2ao222_x2_4_sig : BIT;		-- oa2ao222_x2_4_sig
+  SIGNAL no2_x1_4_sig : BIT;		-- no2_x1_4_sig
+  SIGNAL a2_x2_7_sig : BIT;		-- a2_x2_7_sig
+  SIGNAL inv_x2_3_sig : BIT;		-- inv_x2_3_sig
+  SIGNAL oa2a2a23_x2_2_sig : BIT;		-- oa2a2a23_x2_2_sig
+  SIGNAL oa2ao222_x2_5_sig : BIT;		-- oa2ao222_x2_5_sig
+  SIGNAL no3_x1_sig : BIT;		-- no3_x1_sig
+  SIGNAL a2_x2_8_sig : BIT;		-- a2_x2_8_sig
+  SIGNAL oa22_x2_sig : BIT;		-- oa22_x2_sig
+  SIGNAL noa22_x1_sig : BIT;		-- noa22_x1_sig
+  SIGNAL no3_x1_3_sig : BIT;		-- no3_x1_3_sig
+  SIGNAL no3_x1_2_sig : BIT;		-- no3_x1_2_sig
+  SIGNAL no2_x1_5_sig : BIT;		-- no2_x1_5_sig
+  SIGNAL ao22_x2_sig : BIT;		-- ao22_x2_sig
+  SIGNAL oa22_x2_2_sig : BIT;		-- oa22_x2_2_sig
+  SIGNAL na2_x1_2_sig : BIT;		-- na2_x1_2_sig
+  SIGNAL na4_x1_sig : BIT;		-- na4_x1_sig
+  SIGNAL oa2ao222_x2_6_sig : BIT;		-- oa2ao222_x2_6_sig
+  SIGNAL no3_x1_4_sig : BIT;		-- no3_x1_4_sig
+  SIGNAL a3_x2_2_sig : BIT;		-- a3_x2_2_sig
+  SIGNAL inv_x2_4_sig : BIT;		-- inv_x2_4_sig
+  SIGNAL no3_x1_5_sig : BIT;		-- no3_x1_5_sig
+  SIGNAL a4_x2_sig : BIT;		-- a4_x2_sig
+  SIGNAL oa22_x2_3_sig : BIT;		-- oa22_x2_3_sig
+  SIGNAL o3_x2_sig : BIT;		-- o3_x2_sig
+  SIGNAL o3_x2_2_sig : BIT;		-- o3_x2_2_sig
+  SIGNAL o4_x2_sig : BIT;		-- o4_x2_sig
+  SIGNAL o3_x2_3_sig : BIT;		-- o3_x2_3_sig
+  SIGNAL mbk_buf_not_aux18 : BIT;		-- mbk_buf_not_aux18
+  SIGNAL mbk_buf_aux18 : BIT;		-- mbk_buf_aux18
+  SIGNAL mbk_buf_statmachine_current_s : BIT_VECTOR(3 DOWNTO 3);	-- mbk_buf_statmachine_current_s
+  SIGNAL mbk_buf_not_statmachine_current_s : BIT_VECTOR(3 DOWNTO 3);	-- mbk_buf_not_statmachine_current_s
+
+BEGIN
+  mbk_buf_not_statmachine_current_s (3) <= not_statmachine_current_s(3);
+  mbk_buf_statmachine_current_s (3) <= statmachine_current_s(3);
+  mbk_buf_aux18 <= aux18;
+  mbk_buf_not_aux18 <= not_aux18;
+  o3_x2_3_sig <= ((not_aux6 OR not_aux19) OR aux9);
+  o4_x2_sig <= (((not_aux7 OR input(1)) OR mbk_buf_not_aux18) OR
+ not_input(2));
+  o3_x2_2_sig <= ((not_aux6 OR not_aux19) OR aux4);
+  o3_x2_sig <= ((not_aux8 OR mbk_buf_not_aux18) OR not_input(1));
+  oa22_x2_3_sig <= ((mbk_buf_not_statmachine_current_s(3) AND aux3) 
+OR a4_x2_sig);
+  a4_x2_sig <= (((no3_x1_5_sig AND statmachine_current_s(2)) AND
+ not_statmachine_current_s(0)) AND inv_x2_4_sig);
+  no3_x1_5_sig <= NOT(((not_input(1) OR not_aux18) OR input(2)));
+  inv_x2_4_sig <= NOT(statmachine_current_s(1));
+  a3_x2_2_sig <= ((aux1 AND no3_x1_4_sig) AND 
+mbk_buf_not_statmachine_current_s(3));
+  no3_x1_4_sig <= NOT(((not_input(0) OR rst) OR input(1)));
+  oa2ao222_x2_6_sig <= ((na4_x1_sig AND ao22_x2_sig) OR (input(0) AND (
+noa22_x1_sig OR a2_x2_8_sig)));
+  na4_x1_sig <= NOT((((not_statmachine_current_s(0) AND not_aux17
+) AND na2_x1_2_sig) AND oa22_x2_2_sig));
+  na2_x1_2_sig <= NOT((input(2) AND statmachine_current_s(2)));
+  oa22_x2_2_sig <= ((statmachine_current_s(1) AND input(2)) OR 
+not_input(1));
+  ao22_x2_sig <= ((no2_x1_5_sig OR 
+mbk_buf_statmachine_current_s(3)) AND no3_x1_2_sig);
+  no2_x1_5_sig <= NOT((not_aux10 OR statmachine_current_s(0)));
+  no3_x1_2_sig <= NOT(((input(0) OR no3_x1_3_sig) OR rst));
+  no3_x1_3_sig <= NOT(((not_input(1) OR not_aux5) OR input(2)));
+  noa22_x1_sig <= NOT(((oa22_x2_sig AND 
+not_statmachine_current_s(0)) OR mbk_buf_not_aux18));
+  oa22_x2_sig <= ((not_statmachine_current_s(2) AND not_aux14) OR 
+not_aux11);
+  a2_x2_8_sig <= (no3_x1_sig AND not_statmachine_current_s(0));
+  no3_x1_sig <= NOT(((rst OR not_aux8) OR input(1)));
+  oa2ao222_x2_5_sig <= ((oa2a2a23_x2_2_sig AND aux19) OR (mbk_buf_aux18 
+AND (statmachine_current_s(2) OR 
+statmachine_current_s(0))));
+  oa2a2a23_x2_2_sig <= (((inv_x2_3_sig AND not_input(1)) OR (a2_x2_7_sig
+ AND statmachine_current_s(2))) OR (
+not_statmachine_current_s(0) AND no2_x1_4_sig));
+  inv_x2_3_sig <= NOT(not_aux16);
+  a2_x2_7_sig <= (input(1) AND not_aux17);
+  no2_x1_4_sig <= NOT((input(1) OR not_aux17));
+  oa2ao222_x2_4_sig <= ((oa2a2a23_x2_sig AND aux19) OR (mbk_buf_aux18 
+AND (a2_x2_5_sig OR statmachine_current_s(0))));
+  oa2a2a23_x2_sig <= (((inv_x2_2_sig AND input(1)) OR (a2_x2_6_sig AND
+ statmachine_current_s(2))) OR (
+not_statmachine_current_s(0) AND inv_x2_sig));
+  inv_x2_2_sig <= NOT(not_aux16);
+  a2_x2_6_sig <= (not_aux14 AND not_input(1));
+  inv_x2_sig <= NOT(not_aux17);
+  a2_x2_5_sig <= (aux4 AND statmachine_current_s(2));
+  oa2ao222_x2_3_sig <= ((statmachine_current_s(1) AND no2_x1_3_sig) OR (
+mbk_buf_aux18 AND (a2_x2_4_sig OR a2_x2_3_sig)));
+  no2_x1_3_sig <= NOT((not_aux19 OR not_aux13));
+  a2_x2_4_sig <= (nxr2_x1_sig AND statmachine_current_s(2));
+  nxr2_x1_sig <= NOT((statmachine_current_s(1) XOR aux11));
+  a2_x2_3_sig <= (not_aux11 AND statmachine_current_s(0));
+  oa2ao222_x2_sig <= ((oa2ao222_x2_2_sig AND aux19) OR (mbk_buf_aux18 
+AND (a3_x2_sig OR no2_x1_2_sig)));
+  oa2ao222_x2_2_sig <= ((not_statmachine_current_s(0) AND not_aux13) OR 
+(an12_x1_sig AND (o2_x2_2_sig OR 
+statmachine_current_s(2))));
+  o2_x2_2_sig <= (input(1) OR not_input(2));
+  an12_x1_sig <= (NOT(aux12) AND statmachine_current_s(1));
+  a3_x2_sig <= ((not_statmachine_current_s(0) AND na2_x1_sig) 
+AND aux12);
+  na2_x1_sig <= NOT((input(1) AND statmachine_current_s(1)));
+  no2_x1_2_sig <= NOT((not_aux0 OR not_aux4));
+  nao2o22_x1_2_sig <= NOT(((o2_x2_sig OR not_statmachine_current_s(0)) 
+AND (not_aux20 OR not_aux11)));
+  o2_x2_sig <= (not_aux19 OR not_aux4);
+  nao2o22_x1_sig <= NOT(((on12_x1_sig OR a2_x2_sig) AND (not_aux20 OR
+ not_input(2))));
+  on12_x1_sig <= (NOT(aux9) OR not_aux19);
+  a2_x2_sig <= (a2_x2_2_sig AND not_statmachine_current_s(0));
+  a2_x2_2_sig <= (not_aux10 AND not_aux2);
+  aux1 <= NOT((input(2) OR not_aux0));
+  aux3 <= NOT((rst OR not_aux2));
+  aux4 <= NOT((input(1) AND not_input(2)));
+  aux9 <= NOT((input(2) AND not_input(1)));
+  aux11 <= (input(2) OR input(1));
+  aux12 <= NOT((input(2) OR not_statmachine_current_s(2)));
+  aux18 <= NOT((rst OR not_statmachine_current_s(3)));
+  aux19 <= NOT((rst OR mbk_buf_statmachine_current_s(3)));
+  not_input (0) <= NOT(input(0));
+  not_input (1) <= NOT(input(1));
+  not_input (2) <= NOT(input(2));
+  not_aux11 <= NOT(aux11);
+  not_aux18 <= NOT(aux18);
+  not_aux20 <= (mbk_buf_not_aux18 OR 
+not_statmachine_current_s(0));
+  not_aux4 <= NOT(aux4);
+  not_aux19 <= NOT(aux19);
+  not_statmachine_current_s (0) <= NOT(statmachine_current_s(0));
+  not_statmachine_current_s (2) <= NOT(statmachine_current_s(2));
+  not_statmachine_current_s (3) <= NOT(statmachine_current_s(3));
+  not_aux0 <= NOT((statmachine_current_s(1) AND 
+statmachine_current_s(2)));
+  not_aux2 <= (NOT(aux1) OR not_input(1));
+  not_aux7 <= (statmachine_current_s(1) OR 
+statmachine_current_s(2));
+  not_aux10 <= (input(1) OR not_aux7);
+  not_aux13 <= (no2_x1_sig AND not_statmachine_current_s(2));
+  no2_x1_sig <= NOT((input(2) OR not_input(1)));
+  not_aux17 <= (input(2) OR statmachine_current_s(1));
+  not_aux16 <= ((statmachine_current_s(1) AND not_input(2)) OR 
+not_statmachine_current_s(2));
+  not_aux14 <= (not_input(2) OR statmachine_current_s(1));
+  not_aux8 <= (input(2) OR not_aux7);
+  not_aux5 <= NOT((statmachine_current_s(2) XOR 
+statmachine_current_s(1)));
+  not_aux6 <= (not_aux5 AND not_statmachine_current_s(0));
+  label0 : BLOCK (NOT(((clk AND NOT((clk'STABLE))) XOR '1')) = '1')
+  BEGIN
+    statmachine_current_s (0) <= GUARDED ((nao2o22_x1_sig AND not_input(0)) OR (
+nao2o22_x1_2_sig AND NOT(not_input(0))));
+  END BLOCK label0;
+  label1 : BLOCK (NOT(((clk AND NOT((clk'STABLE))) XOR '1')) = '1')
+  BEGIN
+    statmachine_current_s (1) <= GUARDED ((oa2ao222_x2_sig AND not_input(0)) OR (
+oa2ao222_x2_3_sig AND NOT(not_input(0))));
+  END BLOCK label1;
+  label2 : BLOCK (NOT(((clk AND NOT((clk'STABLE))) XOR '1')) = '1')
+  BEGIN
+    statmachine_current_s (2) <= GUARDED ((oa2ao222_x2_4_sig AND not_input(0)) OR (
+oa2ao222_x2_5_sig AND NOT(not_input(0))));
+  END BLOCK label2;
+  label3 : BLOCK (NOT(((clk AND NOT((clk'STABLE))) XOR '1')) = '1')
+  BEGIN
+    statmachine_current_s (3) <= GUARDED oa2ao222_x2_6_sig;
+  END BLOCK label3;
+
+change (0) <= ((oa22_x2_3_sig AND not_input(0)) OR a3_x2_2_sig);
+
+change (1) <= (NOT(input(0)) AND aux3);
+
+output (0) <= NOT(((o3_x2_2_sig AND o3_x2_sig) OR not_input(0))
+);
+
+output (1) <= NOT(((o3_x2_3_sig AND o4_x2_sig) OR input(0)));
+END;
