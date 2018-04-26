@@ -184,7 +184,7 @@ proof :
 	@echo "[PROOF] Netlist checking -r -> $@ "
 	proof -d ./SYF/vendingmachiner ./FLATBEH/vendingmachiner_labs
 
-#----------------- [CLEAN] -----------------#
+#----------------- [CREDITS] -----------------#
 credits:
 	@echo ""
 	@echo "[CREDITS]"
