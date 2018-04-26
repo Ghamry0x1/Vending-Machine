@@ -1,0 +1,17 @@
+BEGIN_PATH_REG
+statmachine_current_s_0_ins
+statmachine_current_s_1_ins
+statmachine_current_s_2_ins
+statmachine_current_s_3_ins
+statmachine_current_s_4_ins
+statmachine_current_s_5_ins
+statmachine_current_s_6_ins
+statmachine_current_s_7_ins
+statmachine_current_s_8_ins
+END_PATH_REG
+
+BEGIN_CONNECTOR
+SCAN_IN scanin
+SCAN_OUT scanout
+SCAN_TEST test
+END_CONNECTOR
