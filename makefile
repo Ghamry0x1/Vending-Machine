@@ -24,10 +24,6 @@ all:	vendingmachinea.vbe \
 	vendingmachiner_l.xsc \
 	vendingmachineo_l.xsc \
 	loon \
-	vendingmachinea_labs.vbe \
-	vendingmachinej_labs.vbe \
-	vendingmachinem_labs.vbe \
-	vendingmachiner_labs.vbe \
 	vendingmachineo_labs.vbe \
 	flatbeh \
 	proof \
@@ -146,25 +142,9 @@ loon:
 
 #----------------- [FLATBEH] -----------------#
 
-vendingmachinea_labs.vbe : ./LOON/vendingmachinea_l.vst
-	@echo "[FLATBEH] Netlist checking -a -> $@ "
-	flatbeh vendingmachinea_l
-
-vendingmachinej_labs.vbe : ./LOON/vendingmachinej_l.vst
-	@echo "[FLATBEH] Netlist checking -j -> $@ "
-	flatbeh vendingmachinej_l
-
-vendingmachinem_labs.vbe : ./LOON/vendingmachinem_l.vst
-	@echo "[FLATBEH] Netlist checking -m -> $@ "
-	flatbeh vendingmachinem_l
-
 vendingmachineo_labs.vbe : ./LOON/vendingmachineo_l.vst
 	@echo "[FLATBEH] Netlist checking -o -> $@ "
 	flatbeh vendingmachineo_l
-
-vendingmachiner_labs.vbe : ./LOON/vendingmachiner_l.vst
-	@echo "[FLATBEH] Netlist checking -r -> $@ "
-	flatbeh vendingmachiner_l
 
 flatbeh:
 	mkdir ./FLATBEH
@@ -173,16 +153,8 @@ flatbeh:
 #----------------- [PROOF] -----------------#
 
 proof :
-	@echo "[PROOF] Netlist checking -a -> $@ "
-	proof -d ./SYF/vendingmachinea ./FLATBEH/vendingmachinea_labs
-	@echo "[PROOF] Netlist checking -j -> $@ "
-	proof -d ./SYF/vendingmachinej ./FLATBEH/vendingmachinej_labs
-	@echo "[PROOF] Netlist checking -m -> $@ "
-	proof -d ./SYF/vendingmachinem ./FLATBEH/vendingmachinem_labs
 	@echo "[PROOF] Netlist checking -o -> $@ "
 	proof -d ./SYF/vendingmachineo ./FLATBEH/vendingmachineo_labs
-	@echo "[PROOF] Netlist checking -r -> $@ "
-	proof -d ./SYF/vendingmachiner ./FLATBEH/vendingmachiner_labs
 
 #----------------- [CREDITS] -----------------#
 credits:
