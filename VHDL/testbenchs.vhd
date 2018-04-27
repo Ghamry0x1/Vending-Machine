@@ -38,6 +38,8 @@ SIGNAL output 	: bit_vector(1 Downto 0);
 
 -- Constants and Clock period definitions
 constant clk_period : time := 1000 ns;
+constant sequence: bit_vector := "0011111011011100100111100";
+
 BEGIN
 	dut: vendingmachineo_s PORT MAP (vdd, vss, clk, input, rst, output, change, scanin, test, scanout);
 	clk_process :process
@@ -49,6 +51,18 @@ BEGIN
    end process;
    stim_proc: PROCESS IS
 BEGIN
+	test <= '1';
+	for i In 0 to sequence'length-1 loop
+	wait for clk_period; -- Leave time for the output to stabilize
+	if i>=4 then -- Assert condition
+	Assert scanout=sequence(i-4)
+	Report "scanout does not follow scan in"
+	Severity error;
+	end if;
+	scanin <= sequence(i); -- scanin changes on the next wait
+	end loop;
+	test <= '0';
+
 	WAIT FOR clk_period; --For the output to be stable
 	ASSERT change = "00" and output = "00"
 	REPORT "Reset error"
