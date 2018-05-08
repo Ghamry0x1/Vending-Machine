@@ -161,6 +161,7 @@ proof :
 #----------------- [SCAPIN] -----------------#
 
 scapin:	./LOON/vendingmachineo_l.vst
+	@echo "[SCAPIN] Scan-path insertion (DFT) $@ "
 	scapin -VRB -P sxlib.scapin vendingmachineo_l pathfile vendingmachineo_s
 	mkdir ./SCAPIN
 	cp *_s.vst ./SCAPIN
@@ -168,6 +169,7 @@ scapin:	./LOON/vendingmachineo_l.vst
 #----------------- [OCP] -----------------#
 
 ocp:	./SCAPIN/vendingmachineo_s.vst
+	@echo "[OCP] Placement $@ "
 	alliance-ocp -v -ring -ioc pinorder vendingmachineo_s vendingmachineo_ocp > vendingmachineo_ocp.out
 	mkdir ./OCP
 	cp *.ap ./OCP
