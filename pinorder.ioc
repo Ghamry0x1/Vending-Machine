@@ -1,16 +1,16 @@
 LEFT (
-)
-TOP (
 (IOPIN input(0).0 );
 (IOPIN input(1).0 );
-(IOPIN input(2).0 );
+(IOPIN input(2).0 );)
+TOP (
 (IOPIN scanin.0 );
-(IOPIN test.0 );)
+(IOPIN test.0 );
+(IOPIN clk.0 );)
 RIGHT (
-)
-BOTTOM (
-(IOPIN scanout.0 );
 (IOPIN change(0).0 );
 (IOPIN change(1).0 );
+(IOPIN rst.0 );)
+BOTTOM (
+(IOPIN scanout.0 );
 (IOPIN output(0).0 );
 (IOPIN output(1).0 );)
