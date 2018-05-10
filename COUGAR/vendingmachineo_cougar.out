@@ -1,0 +1,58 @@
+
+               @@@@ @                                                 
+             @@    @@                                                 
+            @@      @                                                 
+           @@       @    @@@    @@@  @@@@    @@@@@@   @@@@    @@@ @@@ 
+           @@          @@   @@   @@    @@   @@  @@   @@   @    @@@  @@
+           @@         @@     @@  @@    @@   @   @@   @@   @@   @@   @@
+           @@         @@     @@  @@    @@   @   @      @@@@@   @@     
+           @@         @@     @@  @@    @@    @@@     @@   @@   @@     
+            @@      @ @@     @@  @@    @@   @@      @@    @@   @@     
+             @@    @@  @@   @@   @@   @@@   @@@@@@  @@   @@@   @@     
+               @@@@      @@@      @@@@  @@ @@   @@@  @@@@  @@ @@@@    
+                                            @     @                   
+                                             @@@@@                    
+
+                       Netlist extractor ... formerly Lynx
+
+                  Alliance CAD System 5.0,         cougar 1.21
+                  Copyright (c) 1998-2018,      ASIM/LIP6/UPMC
+                  Author(s): Ludovic Jacomme and Gregoire Avot
+                  Contributor(s):             Picault Stephane
+                  E-mail        :  alliance-users@asim.lip6.fr
+
+	---> Parse technological file ./techno/techno-035.rds
+
+		  RDS_LAMBDA        = 24
+		  RDS_UNIT          = 80
+		  RDS_PHYSICAL_GRID = 2
+		  MBK_SCALE_X       = 100
+
+	---> Extract symbolic figure vendingmachineo_s
+
+		---> Translate Mbk -> Rds
+
+		---> Build windows
+		<--- 210
+
+		---> Rectangles    : 3186
+		---> Figure size   : (   -116,   -116 )
+		                     (  43616,  45116 )
+
+		---> Cut transistors
+		<--- 0
+		---> Build equis
+		<--- 117
+		---> Delete windows
+		---> Build signals
+		<--- 117
+		---> Build instances
+		<--- 168
+		---> Build transistors
+		<--- 0
+		---> Save netlist
+
+	<--- done !
+
+	---> Total extracted capacitance
+	<--- 0.0pF
