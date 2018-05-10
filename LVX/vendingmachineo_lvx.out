@@ -1,0 +1,42 @@
+
+                       @@@@@@      @@@@    @@@ @@@@   @@@@
+                         @@         @@      @   @@     @  
+                         @@         @@      @    @@   @   
+                         @@          @@    @      @@ @    
+                         @@          @@    @       @@     
+                         @@           @@  @        @@     
+                         @@           @@  @        @@@    
+                         @@            @@@        @  @@   
+                         @@      @     @@@       @    @@  
+                         @@     @       @       @      @@ 
+                       @@@@@@@@@@       @      @@@    @@@@
+
+                             Gate Netlist Comparator
+
+                   Alliance CAD System 5.0,            lvx 1.5
+                   Copyright (c) 1992-2018,     ASIM/LIP6/UPMC
+                   E-mail        : alliance-users@asim.lip6.fr
+
+
+
+***** Loading and flattening vendingmachineo_s (vst)...
+
+***** Loading and flattening vendingmachineo_cougar (al)...
+
+
+***** Compare Terminals .............
+***** O.K.	(0 sec)
+
+***** Compare Instances ...........
+***** O.K.	(0 sec)
+
+***** Compare Connections ..................
+***** O.K.	(0 sec)
+
+===== Terminals .......... 14    
+===== Instances .......... 100   
+===== Connectors ......... 552   
+
+
+***** Netlists are Identical. *****	(0 sec)
+
