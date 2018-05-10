@@ -1,0 +1,190 @@
+
+                   @@@    @@@           @@@@@@@              
+                    @@     @              @@   @@            
+                    @@@    @              @@    @@           
+                    @ @@   @    @@@@@     @@    @@     @@@   
+                    @ @@   @   @     @    @@   @@    @@   @@ 
+                    @  @@  @  @@     @@   @@@@@     @@     @@
+                    @   @@ @  @@@@@@@@@   @@  @@    @@     @@
+                    @   @@ @  @@          @@   @@   @@     @@
+                    @    @@@  @@      @   @@   @@   @@     @@
+                    @     @@   @@    @@   @@    @@   @@   @@ 
+                   @@@    @@     @@@@   @@@@@   @@@    @@@   
+
+                               Negotiating Router
+
+                   Alliance CAD System 5.0,           nero 5.0
+                   Copyright (c) 2002-2018,     ASIM/LIP6/UPMC
+                   E-mail        : alliance-users@asim.lip6.fr
+
+                                S/N 20120503.1
+
+
+  o  MBK environment :
+
+     MBK_IN_LO       := vst
+     MBK_OUT_LO      := vst
+     MBK_IN_PH       := ap
+     MBK_OUT_PH      := ap
+     MBK_WORK_LIB    := .
+     MBK_CATA_LIB    := .
+                        /usr/share/alliance/cells/sxlib
+                        /usr/share/alliance/cells/dp_sxlib
+                        /usr/share/alliance/cells/rflib
+                        /usr/share/alliance/cells/rf2lib
+                        /usr/share/alliance/cells/ramlib
+                        /usr/share/alliance/cells/romlib
+                        /usr/share/alliance/cells/padlib
+                        /usr/share/alliance/cells/pxlib
+     MBK_CATAL_NAME  := CATAL
+     MBK_VDD         := vdd
+     MBK_VSS         := vss
+     MBK_SEPAR       := .
+
+  o  Loading netlist "vendingmachineo_s"...
+  o  Loading layout "vendingmachineo_ocp"...
+  o  Flattening layout...
+  o  Flattening netlist...
+  o  Building netlist dual representation (lofigchain)...
+  o  Binding logical & physical views...
+
+  o  Loading design into grid...
+     o  Using seed cell "a2_x2_2_ins" (model "a2_x2").
+     o  Grid offset : (0,0) [adjust (0,0)]
+     o  Small design, global routing disabled.
+     o  Allocating grid size [88,91,3].
+     o  Loading external terminals.
+     o  Finding obstacles.
+     o  Loading nets into grid.
+     o  Allocating the net scheduler.
+     o  Reading power grid.
+
+  o  Local routing stage.
+     - [ 108] (hp :=     0) "vdd"
+     - [ 107] (hp :=     0) "vss"
+     - [ 106] (hp :=     8) "a2_x2_4_sig"
+     - [ 105] (hp :=     8) "oa22_x2_2_sig"
+     - [ 104] (hp :=     9) "no3_x1_2_sig"
+     - [ 103] (hp :=     9) "no2_x1_8_sig"
+     - [ 102] (hp :=     9) "scanout"
+     - [ 101] (hp :=     9) "oa22_x2_3_sig"
+     - [ 100] (hp :=    10) "no2_x1_4_sig"
+     - [  99] (hp :=    10) "oa2a22_x2_sig"
+     - [  98] (hp :=    10) "a2_x2_sig"
+     - [  97] (hp :=    11) "ao22_x2_sig"
+     - [  96] (hp :=    11) "na3_x1_3_sig"
+     - [  95] (hp :=    11) "o2_x2_2_sig"
+     - [  94] (hp :=    12) "no3_x1_sig"
+     - [  93] (hp :=    12) "mbk_buf_statmachine_current_s 2"
+     - [  92] (hp :=    12) "na3_x1_2_sig"
+     - [  91] (hp :=    12) "na2_x1_4_sig"
+     - [  90] (hp :=    13) "na2_x1_10_sig"
+     - [  89] (hp :=    13) "no2_x1_2_sig"
+     - [  88] (hp :=    13) "nao2o22_x1_sig"
+     - [  87] (hp :=    13) "oa22_x2_4_sig"
+     - [  86] (hp :=    14) "no2_x1_sig"
+     - [  85] (hp :=    14) "no2_x1_6_sig"
+     - [  84] (hp :=    14) "na2_x1_9_sig"
+     - [  83] (hp :=    15) "noa22_x1_2_sig"
+     - [  82] (hp :=    15) "a3_x2_3_sig"
+     - [  81] (hp :=    15) "inv_x2_sig"
+     - [  80] (hp :=    15) "na2_x1_3_sig"
+     - [  79] (hp :=    16) "na2_x1_12_sig"
+     - [  78] (hp :=    16) "no2_x1_7_sig"
+     - [  77] (hp :=    16) "o2_x2_sig"
+     - [  76] (hp :=    17) "aux1"
+     - [  75] (hp :=    18) "a2_x2_3_sig"
+     - [  74] (hp :=    19) "no2_x1_3_sig"
+     - [  73] (hp :=    19) "oa2a22_x2_2_sig"
+     - [  72] (hp :=    19) "a2_x2_2_sig"
+     - [  71] (hp :=    19) "na2_x1_7_sig"
+     - [  70] (hp :=    19) "not_statmachine_current_s 0"
+     - [  69] (hp :=    19) "na2_x1_2_sig"
+     - [  68] (hp :=    20) "na2_x1_11_sig"
+     - [  67] (hp :=    20) "noa22_x1_3_sig"
+     - [  66] (hp :=    20) "no2_x1_5_sig"
+     - [  65] (hp :=    20) "na3_x1_5_sig"
+     - [  64] (hp :=    20) "na2_x1_5_sig"
+     - [  63] (hp :=    21) "na3_x1_sig"
+     - [  62] (hp :=    22) "not_aux7"
+     - [  61] (hp :=    23) "nao22_x1_sig"
+     - [  60] (hp :=    24) "aux7"
+     - [  59] (hp :=    24) "na2_x1_8_sig"
+     - [  58] (hp :=    24) "not_statmachine_current_s 5"
+     - [  57] (hp :=    24) "na2_x1_6_sig"
+     - [  56] (hp :=    24) "a3_x2_sig"
+     - [  55] (hp :=    26) "nao22_x1_2_sig"
+     - [  54] (hp :=    27) "oa22_x2_5_sig"
+     - [  53] (hp :=    28) "noa2a22_x1_sig"
+     - [  52] (hp :=    28) "na2_x1_sig"
+     - [  51] (hp :=    28) "a3_x2_2_sig"
+     - [  50] (hp :=    28) "ao22_x2_2_sig"
+     - [  49] (hp :=    29) "mbk_buf_aux9"
+     - [  48] (hp :=    29) "statmachine_current_s 1"
+     - [  47] (hp :=    29) "not_statmachine_current_s 1"
+     - [  46] (hp :=    30) "on12_x1_sig"
+     - [  45] (hp :=    31) "oa2ao222_x2_sig"
+     - [  44] (hp :=    32) "not_aux6"
+     - [  43] (hp :=    34) "o3_x2_sig"
+     - [  42] (hp :=    35) "aux9"
+     - [  41] (hp :=    36) "noa22_x1_sig"
+     - [  40] (hp :=    37) "aux5"
+     - [  39] (hp :=    37) "a2_x2_5_sig"
+     - [  38] (hp :=    38) "change 0"
+     - [  37] (hp :=    44) "oa22_x2_sig"
+     - [  36] (hp :=    44) "na3_x1_4_sig"
+     - [  35] (hp :=    48) "not_aux9"
+     - [  34] (hp :=    51) "aux10"
+     - [  33] (hp :=    54) "not_input 2"
+     - [  32] (hp :=    55) "not_aux0"
+     - [  31] (hp :=    55) "statmachine_current_s 6"
+     - [  30] (hp :=    57) "aux0"
+     - [  29] (hp :=    59) "output 0"
+     - [  28] (hp :=    59) "not_aux1"
+     - [  27] (hp :=    60) "not_statmachine_current_s 4"
+     - [  26] (hp :=    62) "scanin"
+     - [  25] (hp :=    63) "not_statmachine_current_s 7"
+     - [  24] (hp :=    64) "statmachine_current_s 3"
+     - [  23] (hp :=    67) "output 1"
+     - [  22] (hp :=    68) "change 1"
+     - [  21] (hp :=    68) "not_aux4"
+     - [  20] (hp :=    69) "not_statmachine_current_s 6"
+     - [  19] (hp :=    71) "statmachine_current_s 7"
+     - [  18] (hp :=    73) "mbk_buf_not_aux7"
+     - [  17] (hp :=    74) "not_statmachine_current_s 8"
+     - [  16] (hp :=    76) "input 0"
+     - [  15] (hp :=    77) "not_statmachine_current_s 3"
+     - [  14] (hp :=    77) "not_statmachine_current_s 2"
+     - [  13] (hp :=    94) "mbk_buf_aux7"
+     - [  12] (hp :=   100) "statmachine_current_s 4"
+     - [  11] (hp :=   100) "not_aux8"
+     - [  10] (hp :=   108) "statmachine_current_s 2"
+     - [   9] (hp :=   115) "statmachine_current_s 0"
+     - [   8] (hp :=   117) "input 1"
+     - [   7] (hp :=   132) "aux8"
+              > AStar unable to find a path.
+              > Re-routing with pri := 256.
+     - [  12] (hp :=    11) "na3_x1_3_sig"
+     - [  11] (hp :=    20) "noa22_x1_3_sig"
+     - [  10] (hp :=    28) "a3_x2_2_sig"
+     - [   9] (hp :=    64) "statmachine_current_s 3"
+     - [   8] (hp :=    67) "output 1"
+     - [   7] (hp :=    71) "statmachine_current_s 7"
+     - [   6] (hp :=   141) "rst"
+     - [   5] (hp :=   142) "statmachine_current_s 5"
+     - [   4] (hp :=   147) "statmachine_current_s 8"
+     - [   3] (hp :=   150) "clk"
+     - [   2] (hp :=   151) "test"
+     - [   1] (hp :=   154) "not_input 1"
+     - [   0] (hp :=   161) "input 2"
+
+  o  Routing stats :
+     - routing iterations    := 155889
+     - re-routing iterations := 10280
+     - ratio                 := 6.18647%.
+
+  o  Dumping routing grid.
+  o  Saving MBK figure "vendingmachineo_s".
+  o  Saving layout as "vendingmachineo_s"...
+
+
