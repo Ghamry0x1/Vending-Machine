@@ -28,63 +28,75 @@ Reading file 'vendingmachinem_o.vst'...
 Controlling file 'paramfile.lax'...
 Reading lib '/usr/share/alliance/cells/sxlib'...
 Capacitances on file 'vendingmachinem_o.vst'...
-Delays on file 'vendingmachinem_o.vst'...2837 ps
-Area on file 'vendingmachinem_o.vst'...143500 lamda² (with over-cell routing)
+Delays on file 'vendingmachinem_o.vst'...3135 ps
+Area on file 'vendingmachinem_o.vst'...146500 lamda² (with over-cell routing)
 Details...
-	o2_x2: 13 (11%)
-	inv_x2: 13 (6%)
-	na2_x1: 13 (9%)
-	no2_x1: 8 (5%)
-	nao22_x1: 7 (7%)
-	noa22_x1: 6 (6%)
-	a2_x2: 6 (5%)
-	a3_x2: 5 (5%)
-	oa22_x2: 4 (4%)
-	sff1_x4: 4 (12%)
-	na3_x1: 4 (3%)
-	nao2o22_x1: 3 (3%)
-	no3_x1: 3 (2%)
-	ao22_x2: 3 (3%)
-	oa2a22_x2: 2 (3%)
-	oa2ao222_x2: 2 (3%)
-	on12_x1: 2 (1%)
+	o2_x2: 21 (17%)
+	inv_x2: 18 (9%)
+	no2_x1: 14 (9%)
+	oa22_x2: 8 (8%)
+	na2_x1: 7 (4%)
+	na3_x1: 6 (5%)
+	no3_x1: 5 (4%)
+	a2_x2: 4 (3%)
+	o3_x2: 4 (4%)
+	an12_x1: 3 (2%)
+	sff1_x4: 3 (9%)
+	nao2o22_x1: 2 (2%)
+	ao22_x2: 2 (2%)
+	oa2a22_x2: 1 (1%)
+	sff2_x4: 1 (4%)
+	oa2ao222_x2: 1 (1%)
 	no4_x1: 1 (1%)
-	ao2o22_x2: 1 (1%)
-	na4_x1: 1 (1%)
 	nxr2_x1: 1 (1%)
-	Total: 102
-Worst RC on file 'vendingmachinem_o.vst'...416 ps
-Inserting buffers on critical path for file 'vendingmachinem_l.vst'...1 buffer inserted -> 2784 ps
-Improving RC on critical path for file 'vendingmachinem_l.vst'...2776 ps
+	noa22_x1: 1 (1%)
+	on12_x1: 1 (0%)
+	a3_x2: 1 (1%)
+	nao22_x1: 1 (1%)
+	a4_x2: 1 (1%)
+	na4_x1: 1 (1%)
+	noa2a22_x1: 1 (1%)
+	Total: 109
+Worst RC on file 'vendingmachinem_o.vst'...392 ps
+Inserting buffers on critical path for file 'vendingmachinem_l.vst'...4 buffers inserted -> 2898 ps
+Improving RC on critical path for file 'vendingmachinem_l.vst'...2843 ps
 Improving all RC for file 'vendingmachinem_l.vst'...
-Worst RC on file 'vendingmachinem_l.vst'...416 ps
-Area on file 'vendingmachinem_l.vst'...144500 lamda² (with over-cell routing)
+Worst RC on file 'vendingmachinem_l.vst'...392 ps
+Area on file 'vendingmachinem_l.vst'...151250 lamda² (with over-cell routing)
 Details...
-	o2_x2: 13 (11%)
-	inv_x2: 13 (6%)
-	na2_x1: 13 (8%)
-	no2_x1: 8 (5%)
-	nao22_x1: 7 (7%)
-	noa22_x1: 6 (6%)
-	a2_x2: 6 (5%)
-	a3_x2: 5 (5%)
-	oa22_x2: 4 (4%)
-	sff1_x4: 4 (12%)
-	na3_x1: 4 (3%)
-	nao2o22_x1: 3 (3%)
-	no3_x1: 3 (2%)
-	ao22_x2: 3 (3%)
-	oa2a22_x2: 2 (3%)
-	oa2ao222_x2: 2 (3%)
-	on12_x1: 2 (1%)
-	buf_x2: 1 (0%)
-	no4_x1: 1 (1%)
-	ao2o22_x2: 1 (1%)
-	na4_x1: 1 (1%)
+	o2_x2: 21 (17%)
+	inv_x2: 16 (7%)
+	no2_x1: 14 (9%)
+	oa22_x2: 8 (7%)
+	na2_x1: 7 (4%)
+	na3_x1: 6 (4%)
+	no3_x1: 5 (4%)
+	a2_x2: 4 (3%)
+	o3_x2: 4 (3%)
+	buf_x2: 3 (1%)
+	an12_x1: 3 (2%)
+	sff1_x4: 3 (8%)
+	nao2o22_x1: 2 (2%)
+	ao22_x2: 2 (1%)
+	inv_x4: 2 (1%)
+	buf_x4: 1 (0%)
+	oa2a22_x2: 1 (1%)
+	sff2_x4: 1 (3%)
+	oa2ao222_x2: 1 (1%)
+	no4_x1: 1 (0%)
 	nxr2_x1: 1 (1%)
-	Total: 103
-Critical path (no warranty)...2776 ps from 'statmachine_current_s 0' to 'change 1'
+	noa22_x1: 1 (0%)
+	on12_x1: 1 (0%)
+	a3_x2: 1 (0%)
+	nao22_x1: 1 (0%)
+	a4_x2: 1 (1%)
+	na4_x1: 1 (0%)
+	noa2a22_x1: 1 (1%)
+	Total: 113
+Critical path (no warranty)...2843 ps from 'statmachine_current_s 3' to 'output 0'
 Saving file 'vendingmachinem_l.vst'...
+Adding signal 'mbk_buf_not_statmachine_current_s 2'
+Adding signal 'mbk_buf_statmachine_current_s 2'
 Saving critical path in xsch color file 'vendingmachinem_l.xsc'...
 End of loon...
 
