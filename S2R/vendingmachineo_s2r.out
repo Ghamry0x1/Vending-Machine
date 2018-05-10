@@ -1,0 +1,85 @@
+
+                                      @@@@           
+                                     @   @@          
+                                    @@    @@         
+                            @@@@@@  @@@   @@ @@@ @@@ 
+                           @@    @   @   @@   @@@  @@
+                           @@@           @    @@   @@
+                            @@@@        @     @@     
+                              @@@@     @      @@     
+                           @    @@@   @    @  @@     
+                           @@    @@  @@@@@@   @@     
+                           @ @@@@@  @@@@@@@  @@@@    
+
+                        Symbolic to Real layout converter
+
+                   Alliance CAD System 5.0,            s2r 5.0
+                   Copyright (c) 2002-2018,     ASIM/LIP6/UPMC
+                   E-mail        : alliance-users@asim.lip6.fr
+
+
+	o loading technology file : /etc/cmos.rds
+	o loading all level of symbolic layout : vendingmachineo_s
+	o removing symbolic data structure 
+	o layout post-treating
+ 		with top connectors,
+ 		with sub connectors,
+ 		with signal names,
+ 		without scotch.
+	--> post-treating model buf_x2
+	    rectangle merging : 
+	--> post-treating model na2_x1
+	    rectangle merging : 
+	--> post-treating model inv_x2
+	    rectangle merging : 
+	--> post-treating model a2_x2
+	    rectangle merging : 
+	--> post-treating model no2_x1
+	    rectangle merging : 
+	--> post-treating model sff2_x4
+	    rectangle merging : 
+	--> post-treating model na3_x1
+	    rectangle merging : 
+	--> post-treating model nao22_x1
+	    rectangle merging : 
+	--> post-treating model ao22_x2
+	    rectangle merging : 
+	--> post-treating model oa22_x2
+	    rectangle merging : 
+	--> post-treating model noa22_x1
+	    rectangle merging : 
+	--> post-treating model a3_x2
+	    rectangle merging : 
+	--> post-treating model oa2a22_x2
+	    rectangle merging : 
+	--> post-treating model oa2ao222_x2
+	    rectangle merging : 
+	--> post-treating model no3_x1
+	    rectangle merging : 
+	--> post-treating model noa2a22_x1
+	    rectangle merging : 
+	--> post-treating model o2_x2
+	    rectangle merging : 
+	--> post-treating model on12_x1
+	    rectangle merging : 
+	--> post-treating model an12_x1
+	    rectangle merging : 
+	--> post-treating model no3_x4
+	    rectangle merging : 
+	--> post-treating model o3_x2
+	    rectangle merging : 
+	--> post-treating model a4_x2
+	    rectangle merging : 
+	--> post-treating model nao2o22_x1
+	    rectangle merging : 
+	--> post-treating model tie_x0
+	    rectangle merging : 
+	--> post-treating model rowend_x0
+	    rectangle merging : 
+	--> post-treating model vendingmachineo_s
+	    ring flattenning  : 
+	    rectangle merging : 
+	o saving vendingmachineo_s.cif
+	o memory allocation informations
+	--> required rectangles = 0  really allocated = 0
+	--> Number of allocated bytes: 252623
